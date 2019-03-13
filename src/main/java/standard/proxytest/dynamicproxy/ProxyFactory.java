@@ -4,6 +4,10 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+/**
+ * @author:xwh
+ * @date 2019/3/13 10:32
+ */
 public class ProxyFactory {
     private Object target;
 
