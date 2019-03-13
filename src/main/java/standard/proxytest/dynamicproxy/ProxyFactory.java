@@ -19,11 +19,14 @@ public class ProxyFactory {
         this.target = target;
     }
 
+    // ClassLoader loader    目标对象使用的类加载器
+    // Class<?>[] interfaces 目标对象实现的所有接口
+    // InvocationHandler h   指明产生的这个代理对象要做什么事情
     public Object getProxyInstance() {
-        Object proxy = Proxy.newProxyInstance(       //
-                target.getClass().getClassLoader(),  // ClassLoader loader    目标对象使用的类加载器
-                target.getClass().getInterfaces(),   // Class<?>[] interfaces 目标对象实现的所有接口
-                new InvocationHandler() {            // InvocationHandler h   指明产生的这个代理对象要做什么事情
+        Object proxy = Proxy.newProxyInstance(
+                target.getClass().getClassLoader(),
+                target.getClass().getInterfaces(),
+                new InvocationHandler() {
 
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args)
