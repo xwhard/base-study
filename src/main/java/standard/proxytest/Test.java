@@ -43,5 +43,6 @@ public class Test {
         IUserDao proxy = (IUserDao) new ProxyFactory(target).getProxyInstance();
         System.out.println("代理对象"+proxy.getClass());
         proxy.save();
+        //
     }
 }
